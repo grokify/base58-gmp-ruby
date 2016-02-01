@@ -1,0 +1,24 @@
+CHANGELOG
+---------
+- **2011-11-21**: 0.0.7
+  - Add Bitcoin suppport
+  - Refactor API
+- **2011-11-14**: 0.0.6
+  - Update encode API
+- **2011-11-06**: 0.0.5
+  - Add Base58 decoding to `GMP::Z` integer
+  - Add Base58 encoding of `GMP::Z` integer
+  - Add Base58 encoding of arbitrary base strings
+  - Add Base58 encoding using GMP alphabet
+  - Add MD5 using GMP alphabet
+  - More tests
+- **2011-11-06**: 0.0.4
+  - Add `flickr_to_gmp` transcoding
+  - Document Flickr and GMP transcoding
+- **2011-11-06**: 0.0.3
+  - Minor fixes.
+- **2011-11-06**: 0.0.2
+  - Documentation update.
+- **2011-11-06**: 0.0.1
+  - Initial release including encode and md5 capabilities.
+  - Does not include decode due to current limitation in GMP binding. For now, the base58 gem can be used for decoding.
