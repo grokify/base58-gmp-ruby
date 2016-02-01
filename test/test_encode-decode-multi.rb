@@ -1,5 +1,4 @@
-require 'test/unit'
-require 'base58_gmp'
+require './test/test_base.rb'
 
 class TestBase58GMP < Test::Unit::TestCase
   MULTI_EXAMPLES = [

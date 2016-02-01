@@ -11,13 +11,13 @@ Base58 GMP Ruby
 [![Docs][docs-rubydoc-svg]][docs-rubydoc-link]
 [![License][license-svg]][license-link]
 
-High speed Base58 encoding using GMP with MD5 support and transcoding between Flickr, Bitcoin and GMP alphabets.
+High speed Base58 encoding using [GMP](https://gmplib.org/) with MD5 support and transcoding between Flickr, Bitcoin and GMP alphabets.
 
 ## Installation
 
 ### Via Bundler
 
-Add 'base58_gmp' to Gemfile and then run `bundle`:
+Add `base58_gmp` to `Gemfile` and then run `bundle`:
 
 ```sh
 $ echo "gem 'base58_gmp'" >> Gemfile
@@ -33,7 +33,6 @@ $ gem install base58_gmp
 ## Usage
 
 ```ruby
-require 'rubygems'
 require 'base58_gmp'
 
 # Encode Int as Base58
@@ -73,7 +72,7 @@ This class supports the Base58 alphabets used by Flickr, Bitcoin and GMP. The Fl
 | Bitcoin  | `[0-9A-Za-z]` excluding `[0OIl]` |
 | GMP      | `[0-9A-Za-v]` |
 
-The encode, decode and md5 methods support an alphabet parameter which can be set to the supported alphabets ['bitcoin', 'flickr', 'gmp'] to indicate the value to be encoded or decoded.
+The encode, decode and md5 methods support an alphabet parameter which can be set to the supported alphabets `['bitcoin', 'flickr', 'gmp']` to indicate the value to be encoded or decoded.
 
 ### GMP
 
@@ -106,6 +105,10 @@ Flickr post introducing Base58:
 Bitcoin wiki Base58 article:
 
 * https://en.bitcoin.it/wiki/Base58Check_encoding
+
+GMP:
+
+* https://gmplib.org/
 
 ## Credits
 
