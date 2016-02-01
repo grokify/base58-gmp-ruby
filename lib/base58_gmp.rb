@@ -14,21 +14,21 @@ class Base58GMP
     'flickr'  => '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ',
     'gmp'     => '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuv'
   }
-  
+
   DEFAULT_ALPHABET = 'flickr'
   GMP_ALPHABET     = 'gmp'
 
-  def self.integer_to_base58(integer, alphabet=DEFAULT_ALPHABET)
-    base58 = integer.is_a?(GMP::Z)     ?
-               integer.to_s(base = 58) :
-               GMP::Z(integer).to_s(base = 58)
+  def self.integer_to_base58(integer, alphabet = DEFAULT_ALPHABET)
+    base58 = integer.is_a?(GMP::Z) \
+           ? integer.to_s(58) \
+           : GMP::Z(integer).to_s(58)
 
-    alphabet.is_a?(String) && alphabet.downcase == GMP_ALPHABET ?
-      base58 :
-      from_to(base58, GMP_ALPHABET, alphabet)
+    alphabet.is_a?(String) && alphabet.downcase == GMP_ALPHABET \
+      ? base58 \
+      : from_to(base58, GMP_ALPHABET, alphabet)
   end
 
-  def self.base58_to_integer(base58, alphabet=DEFAULT_ALPHABET)
+  def self.base58_to_integer(base58, alphabet = DEFAULT_ALPHABET)
     unless base58.is_a?(String)
       fail ArgumentError, 'Base58 argument is not a string.'
     end
@@ -64,7 +64,7 @@ class Base58GMP
       base58
   end
 
-  def self.md5_base58(data, alphabet=DEFAULT_ALPHABET)
+  def self.md5_base58(data, alphabet = DEFAULT_ALPHABET)
     integer_to_base58(Digest::MD5.hexdigest(data).hex, alphabet)
   end
 
