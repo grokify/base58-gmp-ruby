@@ -28,6 +28,7 @@ matrix:
     - rvm: jruby
     - rvm: jruby-19mode
     - rvm: jruby-head
+    - rvm: rbx-2
     - rvm: rbx-head
 
 before_install:

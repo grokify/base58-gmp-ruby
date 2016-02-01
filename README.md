@@ -79,6 +79,16 @@ The encode, decode and md5 methods support an alphabet parameter which can be se
 
 This class requires GMP 4.2.0 or above. Prior versions are limited to Base36.
 
+## Supported Ruby Versions
+
+This library supports and is [tested against](https://travis-ci.org/grokify/ringcentral-sdk-ruby) the following Ruby implementations:
+
+1. Ruby 2.3.0
+2. Ruby 2.2.0
+3. Ruby 2.1.0
+4. Ruby 2.0.0
+5. Ruby 1.9.3
+
 ### Change Log
 
 See [CHANGELOG.md](CHANGELOG.md)

@@ -30,7 +30,7 @@ class Base58GMP
 
   def self.base58_to_integer(base58, alphabet=DEFAULT_ALPHABET)
     unless base58.is_a?(String)
-      raise ArgumentError, 'Base58 argument is not a string.'
+      fail ArgumentError, 'Base58 argument is not a string.'
     end
 
     unless alphabet.is_a?(String) && alphabet.downcase == GMP_ALPHABET
@@ -42,21 +42,21 @@ class Base58GMP
 
   def self.from_to(base58, from_alphabet, to_alphabet)
     unless base58.is_a?(String)
-      raise ArgumentError, 'Base58 argument is not a string.'
+      fail ArgumentError, 'Base58 argument is not a string.'
     end
 
     unless (
       from_alphabet.is_a?(String) &&
       from_digits = ALPHABETS[from_alphabet.downcase]
     )
-      raise ArgumentError, 'From encoding is not valid.'
+      fail ArgumentError, 'From encoding is not valid.'
     end
 
     unless (
       to_alphabet.is_a?(String) &&
       to_digits = ALPHABETS[to_alphabet.downcase]
     )
-      raise ArgumentError, 'To encoding is not valid.'
+      fail ArgumentError, 'To encoding is not valid.'
     end
 
     from_digits != to_digits ?
