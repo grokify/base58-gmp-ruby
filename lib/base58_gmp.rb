@@ -1,7 +1,7 @@
 # Base58GMP
 # Copyright (c) 2011-2016 John Wang
 # http://johnwang.com
-# Distributed under the MIT license as included with this plugin.
+# Distributed under the MIT license as included with this gem.
 
 require 'digest/md5'
 require 'gmp'
@@ -73,5 +73,4 @@ class Base58GMP
     alias_method :decode, :base58_to_integer
     alias_method :md5, :md5_base58
   end
-
 end

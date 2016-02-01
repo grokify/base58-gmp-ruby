@@ -6,7 +6,7 @@ version = $1
 Gem::Specification.new do |s|
   s.name        = 'base58_gmp'
   s.version     = version
-  s.date        = '2011-11-21'
+  s.date        = '2016-01-31'
   s.summary     = 'High speed Base58 encoding using GMP with MD5 support'
   s.description = 'High speed Base58 encoding using GMP with MD5 support and transcoding between Flickr, Bitcoin and GMP alphabets.'
   s.authors     = ['John Wang']
