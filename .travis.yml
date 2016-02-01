@@ -41,5 +41,4 @@ notifications:
       - johncwang@gmail.com
     on_success: always
     on_failure: always
-  webhooks:
-    - https://zapier.com/hooks/catch/2y1h4a/
+
