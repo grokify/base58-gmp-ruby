@@ -1,13 +1,13 @@
 # Base58GMP
-# Copyright (c) 2011 John Wang
+# Copyright (c) 2011-2016 John Wang
 # http://johnwang.com
 # Distributed under the MIT license as included with this plugin.
 
-require 'rubygems'
 require 'digest/md5'
 require 'gmp'
 
 class Base58GMP
+  VERSION = '0.0.7'
 
   ALPHABETS   = {
     'bitcoin' => '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',
