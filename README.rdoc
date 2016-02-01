@@ -1,0 +1,88 @@
+= Base58GMP
+
+High speed Base58 encoding using GMP with MD5 support and transcoding between Flickr, Bitcoin and GMP alphabets.
+
+== Installation
+
+=== Gem Installation
+
+Download and install base58_gmp with the following:
+
+  gem install base58_gmp
+
+== Usage
+
+  require 'rubygems'
+  require 'base58_gmp'
+
+  # Encode Int as Base58
+  Base58GMP.encode(12345)                         # => 4ER
+
+  # Encode GMP::Z Int as Base58
+  Base58GMP.encode(GMP::Z(12345))                 # => 4ER
+
+  # Encode as Base58 using alternate alphabets
+  Base58GMP.encode(12345, 'bitcoin')              # => 4fr
+  Base58GMP.encode(12345, 'gmp')                  # => 3cn
+
+  # Decode Base58 as GMP::Z Integer
+  Base58GMP.decode('4ER')                         # => 12345
+
+  # Decode Base58 as GMP::Z Integer using alternate alphabets
+  Base58GMP.decode('4fr', 'bitcoin')              # => 12345
+  Base58GMP.decode('3cn', 'gmp')                  # => 12345
+
+  # MD5 Base58 Digest
+  Base58GMP.md5('foo@bar.com')                    # => w6fdCRXnUXyz7EtDn5TgN9
+
+  # Convert between alphabets
+  Base58GMP.from_to('123456789abcdefghijk','flickr','gmp') # => 0123456789ABCDEFGHIJ
+  Base58GMP.from_to('0123456789ABCDEFGHIJ','gmp','flickr') # => 123456789abcdefghijk
+
+== Notes
+
+=== Base58 Implementations - Flickr, Bitcoin and GMP
+
+This class supports the Base58 alphabets used by Flickr, Bitcoin and GMP. The Flickr alphabet is the default and used when no alphabet is provided.
+
+Flickr Alphabet: [0-9a-zA-Z] excluding [0OIl] to improve human readability
+
+Bitcoin Alphabet: [0-9A-Za-z] excluding [0OIl] to improve human readability
+
+GMP Alphabet: [0-9A-Za-v]
+
+The encode, decode and md5 methods support an alphabet parameter which can be set to the supported alphabets ['bitcoin', 'flickr', 'gmp'] to indicate the value to be encoded or decoded.
+
+=== GMP
+
+This class requires GMP 4.2.0 or above. Prior versions are limited to Base36.
+
+== Links
+
+Flickr post introducing Base58:
+
+http://www.flickr.com/groups/api/discuss/72157616713786392/
+
+Bitcoin wiki Base58 article:
+
+https://en.bitcoin.it/wiki/Base58Check_encoding
+
+== Problems, Comments, Suggestions?
+
+All of the above are most welcome. mailto:johncwang@gmail.com
+
+== Credits
+
+John Wang - http://johnwang.com
+
+Some test examples courtesy Fraser Speirs' Base58Encoder Objective-C class, http://gist.github.com/101674.
+
+== License
+
+Base58GMP is available under an MIT-style license.
+
+:include: MIT-LICENSE 
+
+== Warranty
+
+This software is provided "as is" and without any express or implied warranties, including, without limitation, the implied warranties of merchantibility and fitness for a particular purpose.
