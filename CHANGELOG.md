@@ -9,8 +9,8 @@ CHANGELOG
   - Add Base58 decoding to `GMP::Z` integer
   - Add Base58 encoding of `GMP::Z` integer
   - Add Base58 encoding of arbitrary base strings
-  - Add Base58 encoding using GMP alphabet
-  - Add MD5 using GMP alphabet
+  - Add Base58 encoding using `gmp` alphabet
+  - Add MD5 using `gmp` alphabet
   - More tests
 - **2011-11-06**: 0.0.4
   - Add `flickr_to_gmp` transcoding
@@ -21,4 +21,4 @@ CHANGELOG
   - Documentation update.
 - **2011-11-06**: 0.0.1
   - Initial release including encode and md5 capabilities.
-  - Does not include decode due to current limitation in GMP binding. For now, the base58 gem can be used for decoding.
+  - Does not include decode due to current limitation in GMP binding. For now, the `base58` gem can be used for decoding.
