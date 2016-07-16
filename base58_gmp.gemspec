@@ -14,5 +14,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/grokify/'
   s.licenses    = ['MIT']
   s.files       = %w(CHANGELOG.md LICENSE.txt README.md base58_gmp.gemspec) + Dir['lib/**/*.rb']
-  s.add_dependency 'gmp', '~> 0', '>= 0'
+  if RUBY_VERSION >= '2.1'
+    s.add_dependency 'gmp', '~> 0', '>= 0'
+  end
 end
