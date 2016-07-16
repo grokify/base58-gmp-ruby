@@ -17,4 +17,9 @@ Gem::Specification.new do |s|
   if RUBY_VERSION >= '2.1'
     s.add_dependency 'gmp', '~> 0', '>= 0'
   end
+  s.add_development_dependency 'coveralls'
+  s.add_development_dependency 'mocha'
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'test-unit'
 end
