@@ -70,7 +70,7 @@ class Base58GMP
   end
 
   def self.md5_base58(data, alphabet = DEFAULT_ALPHABET)
-    integer_to_base58(Digest::MD5.hexdigest(data.to_s).hex, alphabet)
+    integer_to_base58(Digest::MD5.hexdigest(data).hex, alphabet)
   end
 
   def self.md5_base58_padded(data, alphabet = DEFAULT_ALPHABET)
