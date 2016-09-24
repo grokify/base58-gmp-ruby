@@ -87,7 +87,6 @@ This library supports and is [tested against](https://travis-ci.org/grokify/ring
 2. Ruby 2.2.0
 3. Ruby 2.1.0
 4. Ruby 2.0.0
-5. Ruby 1.9.3
 
 ### Change Log
 
