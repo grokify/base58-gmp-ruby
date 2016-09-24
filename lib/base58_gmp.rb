@@ -69,13 +69,12 @@ class Base58GMP
     return ALPHABETS[alphabet]
   end
 
-  def self.md5_base58(data, alphabet = DEFAULT_ALPHABET)
-    integer_to_base58(Digest::MD5.hexdigest(data).hex, alphabet)
-  end
+  def self.md5_base58(data, alphabet = DEFAULT_ALPHABET, opts = {})
+    base58 = integer_to_base58(Digest::MD5.hexdigest(data).hex, alphabet)
 
-  def self.md5_base58_padded(data, alphabet = DEFAULT_ALPHABET)
-    md5_base58(data, alphabet).rjust(
-      BASE58_LENGTH_MD5, alphabet_digits(alphabet)[0])
+    opts.key?(:pad) && opts[:pad] \
+      ? base58.rjust(BASE58_LENGTH_MD5, alphabet_digits(alphabet)[0]) \
+      : base58
   end
 
   class << self
