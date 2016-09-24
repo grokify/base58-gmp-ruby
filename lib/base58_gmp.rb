@@ -9,31 +9,33 @@ require 'gmp'
 class Base58GMP
   VERSION = '0.0.7'
 
-  ALPHABETS   = {
-    'bitcoin' => '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',
-    'flickr'  => '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ',
-    'gmp'     => '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuv'
+  ALPHABETS = {
+    bitcoin: '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',
+    flickr:  '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ',
+    ripple:  'rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz',
+    gmp:     '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuv'
   }
 
-  DEFAULT_ALPHABET = 'flickr'
-  GMP_ALPHABET     = 'gmp'
+  DEFAULT_ALPHABET = :flickr
+  GMP_ALPHABET = :gmp
+  BASE58_LENGTH_MD5 = 22
 
   def self.integer_to_base58(integer, alphabet = DEFAULT_ALPHABET)
     base58 = integer.is_a?(GMP::Z) \
            ? integer.to_s(58) \
            : GMP::Z(integer).to_s(58)
 
-    alphabet.is_a?(String) && alphabet.downcase == GMP_ALPHABET \
+    normalize_alphabet(alphabet) == GMP_ALPHABET \
       ? base58 \
       : from_to(base58, GMP_ALPHABET, alphabet)
   end
 
   def self.base58_to_integer(base58, alphabet = DEFAULT_ALPHABET)
-    unless base58.is_a?(String)
+    unless base58.is_a? String
       fail ArgumentError, 'Base58 argument is not a string.'
     end
 
-    unless alphabet.is_a?(String) && alphabet.downcase == GMP_ALPHABET
+    unless normalize_alphabet(alphabet) == GMP_ALPHABET
       base58 = from_to(base58, alphabet, GMP_ALPHABET)
     end
 
@@ -41,31 +43,39 @@ class Base58GMP
   end
 
   def self.from_to(base58, from_alphabet, to_alphabet)
-    unless base58.is_a?(String)
+    unless base58.is_a? String
       fail ArgumentError, 'Base58 argument is not a string.'
     end
 
-    unless (
-      from_alphabet.is_a?(String) &&
-      from_digits = ALPHABETS[from_alphabet.downcase]
-    )
-      fail ArgumentError, 'From encoding is not valid.'
-    end
-
-    unless (
-      to_alphabet.is_a?(String) &&
-      to_digits = ALPHABETS[to_alphabet.downcase]
-    )
-      fail ArgumentError, 'To encoding is not valid.'
-    end
+    from_digits = alphabet_digits from_alphabet
+    to_digits = alphabet_digits to_alphabet
 
     from_digits != to_digits ?
       base58.tr(from_digits, to_digits) :
       base58
   end
 
+  def self.normalize_alphabet(alphabet)
+    alphabet.to_sym.downcase
+  end
+
+  def self.alphabet_digits(alphabet)
+    alphabet = normalize_alphabet alphabet
+
+    unless ALPHABETS.key? alphabet
+      fail ArgumentError, "Alphabet is invalid: #{alphabet}"
+    end
+
+    return ALPHABETS[alphabet]
+  end
+
   def self.md5_base58(data, alphabet = DEFAULT_ALPHABET)
-    integer_to_base58(Digest::MD5.hexdigest(data).hex, alphabet)
+    integer_to_base58(Digest::MD5.hexdigest(data.to_s).hex, alphabet)
+  end
+
+  def self.md5_base58_padded(data, alphabet = DEFAULT_ALPHABET)
+    md5_base58(data, alphabet).rjust(
+      BASE58_LENGTH_MD5, alphabet_digits(alphabet)[0])
   end
 
   class << self
