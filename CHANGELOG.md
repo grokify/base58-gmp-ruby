@@ -1,7 +1,8 @@
 CHANGELOG
 ---------
 - **2016-09-24**: 0.1.0
-  - Add symbol alphabet support
+  - Add Ripple alphabet
+  - Add alphabet parameter as symbol support
   - Add `md5_base58_padded` method
   - Add `normalize_alphabet` and `alphabet_digits` methods
 - **2011-11-21**: 0.0.7
