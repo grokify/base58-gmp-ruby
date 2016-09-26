@@ -1,4 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/grokify/base58-gmp-ruby.png?label=ready&title=Ready)](https://waffle.io/grokify/base58-gmp-ruby)
+
 Base58 GMP Ruby
 ===============
 
@@ -8,6 +8,7 @@ Base58 GMP Ruby
 [![Dependency Status][dependency-status-svg]][dependency-status-link]
 [![Code Climate][codeclimate-status-svg]][codeclimate-status-link]
 [![Scrutinizer Code Quality][scrutinizer-status-svg]][scrutinizer-status-link]
+[![Stories in Ready][story-status-svg]][story-status-link]
 [![Downloads][downloads-svg]][downloads-link]
 [![Docs][docs-rubydoc-svg]][docs-rubydoc-link]
 [![License][license-svg]][license-link]
@@ -148,6 +149,8 @@ Base58 GMP Ruby &copy; 2011-2016 by John Wang
  [codeclimate-status-link]: https://codeclimate.com/github/grokify/base58-gmp-ruby
  [scrutinizer-status-svg]: https://scrutinizer-ci.com/g/grokify/base58-gmp-ruby/badges/quality-score.png?b=master
  [scrutinizer-status-link]: https://scrutinizer-ci.com/g/grokify/base58-gmp-ruby/?branch=master
+ [story-status-svg]: https://badge.waffle.io/grokify/base58-gmp-ruby.svg?label=ready&title=Ready
+ [story-status-link]: https://waffle.io/grokify/base58-gmp-ruby
  [docs-rubydoc-svg]: https://img.shields.io/badge/docs-rubydoc-blue.svg
  [docs-rubydoc-link]: http://www.rubydoc.info/gems/base58_gmp/
  [license-svg]: https://img.shields.io/badge/license-MIT-blue.svg
