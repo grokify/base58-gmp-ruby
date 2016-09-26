@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/grokify/base58-gmp-ruby.png?label=ready&title=Ready)](https://waffle.io/grokify/base58-gmp-ruby)
 Base58 GMP Ruby
 ===============
 
