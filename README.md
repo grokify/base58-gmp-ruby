@@ -8,10 +8,11 @@ Base58 GMP Ruby
 [![Dependency Status][dependency-status-svg]][dependency-status-link]
 [![Code Climate][codeclimate-status-svg]][codeclimate-status-link]
 [![Scrutinizer Code Quality][scrutinizer-status-svg]][scrutinizer-status-link]
-[![Stories in Ready][story-status-svg]][story-status-link]
 [![Downloads][downloads-svg]][downloads-link]
 [![Docs][docs-rubydoc-svg]][docs-rubydoc-link]
 [![License][license-svg]][license-link]
+
+[![Stories in Ready][story-status-svg]][story-status-link]
 
 High speed Base58 encoding using [GMP](https://gmplib.org/) with MD5 support and transcoding between Flickr, Bitcoin and GMP alphabets.
 
