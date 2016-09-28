@@ -35,6 +35,8 @@ $ gem install base58_gmp
 
 ## Usage
 
+Alphabet can be specified using symbol or string.
+
 ```ruby
 require 'base58_gmp'
 
@@ -45,6 +47,10 @@ Base58GMP.encode 12345                          # => 4ER
 Base58GMP.encode GMP::Z(12345)                  # => 4ER
 
 # Encode as Base58 using alternate alphabets
+Base58GMP.encode 12345, :bitcoin                # => 4fr
+Base58GMP.encode 12345, :gmp                    # => 3cn
+
+# Encode as Base58 using alternate alphabets using string
 Base58GMP.encode 12345, 'bitcoin'               # => 4fr
 Base58GMP.encode 12345, 'gmp'                   # => 3cn
 
@@ -52,8 +58,8 @@ Base58GMP.encode 12345, 'gmp'                   # => 3cn
 Base58GMP.decode '4ER'                          # => 12345
 
 # Decode Base58 as GMP::Z Integer using alternate alphabets
-Base58GMP.decode '4fr', 'bitcoin'               # => 12345
-Base58GMP.decode '3cn', 'gmp'                   # => 12345
+Base58GMP.decode '4fr', :bitcoin                # => 12345
+Base58GMP.decode '3cn', :gmp                    # => 12345
 
 # MD5 Base58 Digest
 Base58GMP.md5 'foo@bar.com'                     # => w6fdCRXnUXyz7EtDn5TgN9
@@ -62,8 +68,8 @@ Base58GMP.md5 'foo@bar.com'                     # => w6fdCRXnUXyz7EtDn5TgN9
 Base58GMP.md5 'foo@bar.com', :flickr, pad: true # => w6fdCRXnUXyz7EtDn5TgN9
 
 # Convert between alphabets
-Base58GMP.from_to '123456789abcdefghijk', 'flickr', 'gmp' # => 0123456789ABCDEFGHIJ
-Base58GMP.from_to '0123456789ABCDEFGHIJ', 'gmp', 'flickr' # => 123456789abcdefghijk
+Base58GMP.from_to '123456789abcdefghijk', :flickr, :gmp # => 0123456789ABCDEFGHIJ
+Base58GMP.from_to '0123456789ABCDEFGHIJ', :gmp, :flickr # => 123456789abcdefghijk
 ```
 
 ## Notes
