@@ -50,9 +50,9 @@ class Base58GMP
     from_digits = alphabet_digits from_alphabet
     to_digits = alphabet_digits to_alphabet
 
-    from_digits != to_digits ?
-      base58.tr(from_digits, to_digits) :
-      base58
+    from_digits != to_digits \
+      ? base58.tr(from_digits, to_digits) \
+      : base58
   end
 
   def self.normalize_alphabet(alphabet)
