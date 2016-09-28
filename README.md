@@ -14,7 +14,7 @@ Base58 GMP Ruby
 
 [![Stories in Ready][story-status-svg]][story-status-link]
 
-High speed Base58 encoding using [GMP](https://gmplib.org/) with MD5 support and transcoding between Flickr, Bitcoin and GMP alphabets.
+High speed Base58 encoding using [GMP](https://gmplib.org/) with MD5 support and transcoding between Flickr, Bitcoin, Ripple and GMP alphabets.
 
 ## Installation
 
