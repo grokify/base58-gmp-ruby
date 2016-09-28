@@ -1,29 +1,29 @@
 CHANGELOG
 ---------
-- **2016-09-24**: 0.1.0
-  - Add Ripple alphabet
-  - Add alphabet parameter as symbol support
+- **1.0.0** - 2016-09-27**
   - Add `md5_base58` method `pad:` option
+  - Add alphabet parameter as symbol support
+  - Add Ripple alphabet
   - Add `normalize_alphabet` and `alphabet_digits` methods
-- **2011-11-21**: 0.0.7
+- **0.0.7** - 2011-11-21
   - Add Bitcoin suppport
   - Refactor API
-- **2011-11-14**: 0.0.6
+- **0.0.6** - 2011-11-14
   - Update encode API
-- **2011-11-06**: 0.0.5
+- **0.0.5** - 2011-11-06
   - Add Base58 decoding to `GMP::Z` integer
   - Add Base58 encoding of `GMP::Z` integer
   - Add Base58 encoding of arbitrary base strings
   - Add Base58 encoding using `gmp` alphabet
   - Add MD5 using `gmp` alphabet
   - More tests
-- **2011-11-06**: 0.0.4
+- **0.0.4** - 2011-11-06
   - Add `flickr_to_gmp` transcoding
   - Document Flickr and GMP transcoding
-- **2011-11-06**: 0.0.3
+- **0.0.3** - 2011-11-06
   - Minor fixes.
-- **2011-11-06**: 0.0.2
+- **0.0.2** - 2011-11-06
   - Documentation update.
-- **2011-11-06**: 0.0.1
+- **0.0.1** - 2011-11-06
   - Initial release including encode and md5 capabilities.
   - Does not include decode due to current limitation in GMP binding. For now, the `base58` gem can be used for decoding.

@@ -7,7 +7,7 @@ require 'digest/md5'
 require 'gmp'
 
 class Base58GMP
-  VERSION = '0.0.7'
+  VERSION = '1.0.0'
 
   ALPHABETS = {
     bitcoin: '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',
