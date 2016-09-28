@@ -8,8 +8,8 @@ class TestBase58GMP < Test::Unit::TestCase
   }
 
   def test_alphabets_transcoding
-    assert_equal ALPHABETS['bitcoin'], Base58GMP.from_to(ALPHABETS['flickr'], 'flickr', 'bitcoin')
-    assert_equal ALPHABETS['bitcoin'], Base58GMP.from_to(ALPHABETS['gmp'], 'gmp', 'bitcoin')
+    assert_equal ALPHABETS['bitcoin'], Base58GMP.from_to(ALPHABETS['flickr'], 'flickr', :bitcoin)
+    assert_equal ALPHABETS['bitcoin'], Base58GMP.from_to(ALPHABETS['gmp'], :gmp, 'bitcoin')
     assert_equal ALPHABETS['flickr'], Base58GMP.from_to(ALPHABETS['bitcoin'], 'bitcoin', 'flickr')
     assert_equal ALPHABETS['flickr'], Base58GMP.from_to(ALPHABETS['gmp'], 'gmp', 'flickr')
     assert_equal ALPHABETS['gmp'], Base58GMP.from_to(ALPHABETS['bitcoin'], 'bitcoin', 'gmp')
