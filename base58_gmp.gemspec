@@ -14,13 +14,10 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/grokify/'
   s.licenses    = ['MIT']
   s.files       = %w(CHANGELOG.md LICENSE.txt README.md base58_gmp.gemspec) + Dir['lib/**/*.rb']
-  #if RUBY_VERSION < '2.1'
-    s.add_dependency 'gmp', '~> 0', '>= 0'
-  #end
-  s.add_development_dependency 'bundler'
-  s.add_development_dependency 'coveralls'
-  s.add_development_dependency 'mocha'
-  s.add_development_dependency 'rake'
-  s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'test-unit'
+  s.add_dependency 'gmp', '~> 0', '>= 0'
+  s.add_development_dependency 'bundler', '~> 1.0'
+  s.add_development_dependency 'coveralls', '~> 0'
+  s.add_development_dependency 'rake', '~> 11'
+  s.add_development_dependency 'simplecov', '~> 0'
+  s.add_development_dependency 'test-unit', '~> 3'
 end
