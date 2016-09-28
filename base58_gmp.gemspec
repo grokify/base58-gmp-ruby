@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/grokify/'
   s.licenses    = ['MIT']
   s.files       = %w(CHANGELOG.md LICENSE.txt README.md base58_gmp.gemspec) + Dir['lib/**/*.rb']
+  s.required_ruby_version = '>= 2.0.0'
   s.add_dependency 'gmp', '~> 0', '>= 0'
   s.add_development_dependency 'bundler', '~> 1.0'
   s.add_development_dependency 'coveralls', '~> 0'
