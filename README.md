@@ -4,6 +4,7 @@ Base58 GMP Ruby
 
 [![Gem Version][gem-version-svg]][gem-version-link]
 [![Build Status][build-status-svg]][build-status-link]
+[![Codacy Badge][codacy-svg]][codacy-link]
 [![Coverage Status][coverage-status-svg]][coverage-status-link]
 [![Dependency Status][dependency-status-svg]][dependency-status-link]
 [![Code Climate][codeclimate-status-svg]][codeclimate-status-link]
@@ -148,6 +149,8 @@ Base58 GMP Ruby &copy; 2011-2016 by John Wang
  [downloads-link]: https://rubygems.org/gems/base58_gmp
  [build-status-svg]: https://api.travis-ci.org/grokify/base58-gmp-ruby.svg?branch=master
  [build-status-link]: https://travis-ci.org/grokify/base58-gmp-ruby
+ [codacy-svg]: https://api.codacy.com/project/badge/Grade/fee7ec078e5b428190c347d54b609c1a
+ [codacy-link]: https://www.codacy.com/app/grokify/base58-gmp-ruby
  [coverage-status-svg]: https://coveralls.io/repos/grokify/base58-gmp-ruby/badge.svg?branch=master
  [coverage-status-link]: https://coveralls.io/r/grokify/base58-gmp-ruby?branch=master
  [dependency-status-svg]: https://gemnasium.com/grokify/base58-gmp-ruby.svg
