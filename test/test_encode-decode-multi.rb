@@ -1590,11 +1590,16 @@ class TestBase58GMP < Test::Unit::TestCase
       assert_equal test['b58g'],     Base58GMP.encode(test['hex'].to_i(16),'gmp')
       assert_equal test['dec'].to_i, Base58GMP.decode(test['b58g'],:gmp).to_i
       assert_equal test['hex'] ,     Base58GMP.decode(test['b58g'],'gmp').to_s(base=16)
+    end
+  end
+
+  def test_md5
+    MULTI_EXAMPLES.each do |test|
+      assert_equal test['b58f'],     Base58GMP.md5(test['data'])
       assert_equal test['b58f'],     Base58GMP.md5_base58(test['data'])
       assert_equal test['b58g'],     Base58GMP.md5_base58(test['data'],'GMP')
       assert_equal test['b58fp'],    Base58GMP.md5_base58(test['data'], :flickr, pad: true)
       assert_equal test['b58gp'],    Base58GMP.md5_base58(test['data'], :gmp, pad: true)
     end
-  end  
-
+  end
 end

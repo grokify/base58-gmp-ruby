@@ -7,7 +7,7 @@ require 'digest/md5'
 require 'gmp'
 
 class Base58GMP
-  VERSION = '1.0.0'
+  VERSION = '1.0.1'
 
   ALPHABETS = {
     bitcoin: '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',
@@ -81,8 +81,5 @@ class Base58GMP
     alias encode integer_to_base58
     alias decode base58_to_integer
     alias md5 md5_base58
-    #alias :encode, :integer_to_base58
-    #alias :decode, :base58_to_integer
-    #alias :md5, :md5_base58
   end
 end
