@@ -21,13 +21,10 @@ class Base58GMP
   BASE58_LENGTH_MD5 = 22
 
   def self.integer_to_base58(integer, alphabet = DEFAULT_ALPHABET)
-    base58 = integer.is_a?(GMP::Z) \
-           ? integer.to_s(58) \
-           : GMP::Z(integer).to_s(58)
+    base58 = integer.is_a?(GMP::Z) ? integer.to_s(58) : GMP::Z(integer).to_s(58)
 
-    normalize_alphabet(alphabet) == GMP_ALPHABET \
-      ? base58 \
-      : from_to(base58, GMP_ALPHABET, alphabet)
+    return base58 if normalize_alphabet(alphabet) == GMP_ALPHABET
+    from_to(base58, GMP_ALPHABET, alphabet)
   end
 
   def self.base58_to_integer(base58, alphabet = DEFAULT_ALPHABET)
@@ -50,9 +47,8 @@ class Base58GMP
     from_digits = alphabet_digits from_alphabet
     to_digits = alphabet_digits to_alphabet
 
-    from_digits != to_digits \
-      ? base58.tr(from_digits, to_digits) \
-      : base58
+    return base58.tr(from_digits, to_digits) if from_digits != to_digits
+    base58
   end
 
   def self.normalize_alphabet(alphabet)
@@ -72,9 +68,10 @@ class Base58GMP
   def self.md5_base58(data, alphabet = DEFAULT_ALPHABET, opts = {})
     base58 = integer_to_base58(Digest::MD5.hexdigest(data).hex, alphabet)
 
-    opts.key?(:pad) && opts[:pad] \
-      ? base58.rjust(BASE58_LENGTH_MD5, alphabet_digits(alphabet)[0]) \
-      : base58
+    if opts.key?(:pad) && opts[:pad]
+      return base58.rjust(BASE58_LENGTH_MD5, alphabet_digits(alphabet)[0])
+    end
+    base58
   end
 
   class << self
