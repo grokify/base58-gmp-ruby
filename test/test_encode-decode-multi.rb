@@ -1585,11 +1585,11 @@ class TestBase58GMP < Test::Unit::TestCase
       assert_equal test['b58f'],     Base58GMP.encode(GMP::Z(test['dec'].to_i))
       assert_equal test['b58f'],     Base58GMP.encode(test['hex'].to_i(16))
       assert_equal test['dec'].to_i, Base58GMP.decode(test['b58f']).to_i
-      assert_equal test['hex'] ,     Base58GMP.decode(test['b58f']).to_s(base=16)
+      assert_equal test['hex'] ,     Base58GMP.decode(test['b58f']).to_s(16)
       assert_equal test['b58g'],     Base58GMP.encode(test['dec'].to_i,'gmp')
       assert_equal test['b58g'],     Base58GMP.encode(test['hex'].to_i(16),'gmp')
       assert_equal test['dec'].to_i, Base58GMP.decode(test['b58g'],:gmp).to_i
-      assert_equal test['hex'] ,     Base58GMP.decode(test['b58g'],'gmp').to_s(base=16)
+      assert_equal test['hex'] ,     Base58GMP.decode(test['b58g'],'gmp').to_s(16)
     end
   end
 
