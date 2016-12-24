@@ -78,8 +78,11 @@ class Base58GMP
   end
 
   class << self
-    alias :encode, :integer_to_base58
-    alias :decode, :base58_to_integer
-    alias :md5, :md5_base58
+    alias encode integer_to_base58
+    alias decode base58_to_integer
+    alias md5 md5_base58
+    #alias :encode, :integer_to_base58
+    #alias :decode, :base58_to_integer
+    #alias :md5, :md5_base58
   end
 end
